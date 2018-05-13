@@ -1,0 +1,16 @@
+{
+  "name": "jest-redux-matchers",
+  "version": "0.0.1",
+  "description": "redux matchers for jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "jest",
+    "redux",
+    "matchers"
+  ],
+  "author": "andrej bartko",
+  "license": "MIT"
+}
