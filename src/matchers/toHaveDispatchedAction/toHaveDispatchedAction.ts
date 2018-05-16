@@ -1,5 +1,7 @@
-export function toHaveDispatchedAction(store, expected) {
-  const actual = store.getActions() || [];
+import { store } from 'redux-mock-store';
+
+export function toHaveDispatchedAction(store: store, expected: string[]) {
+  const actual = (store.getActions() || []).map((action) => action.type);
   const pass = actual.includes(expected);
 
   const message = pass ?
@@ -7,13 +9,14 @@ export function toHaveDispatchedAction(store, expected) {
       this.utils.matcherHint('.not.toBe') +
         '\n\n' +
         `Expected action not be triggered\n` +
-        `  ${this.utils.printExpected(expected)}` :
+        `  ${this.utils.printReceived(expected)}` :
     () =>
       this.utils.matcherHint('.toBe') +
         '\n\n' +
-        `Expected acion be triggered\n` +
+        `Expected action be dispatched\n` +
         `  ${this.utils.printExpected(expected)}\n` +
-        `but was not triggered\n`;
+        `but stored dispatched \n` +
+        ` ${this.utils.printReceived(actual)}`;
 
   return {
     actual,
