@@ -31,6 +31,7 @@
   "devDependencies": {
     "@types/jest": "^22.2.3",
     "@types/react-redux": "^6.0.0",
+    "@types/redux-mock-store": "0.0.13",
     "eslint": "^4.19.1",
     "jest": "^22.4.3",
     "ramda": "^0.25.0",
